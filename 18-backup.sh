@@ -22,14 +22,6 @@ LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
-CHECK_ROOT(){
-    if [ $USERID -ne 0 ]
-    then
-        echo "ERROR:: You must have sudo access to execute this script"
-        exit 1 #other than 0
-    fi
-}
-
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -45,8 +37,6 @@ USAGE(){
     echo -e "$R USAGE:: $N backup <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
     exit 1
 }
-
-CHECK_ROOT
 
 mkdir -p $LOGS_FOLDER
 
