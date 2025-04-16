@@ -8,7 +8,7 @@ SOURCE_DIR="/home/ec2-user/app-logs"
 mkdir -p $SOURCE_DIR
 echo "Script started executing .." 
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +10)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +5)
 echo "Files to be deleted: $FILES_TO_DELETE"
 
 while read -r filepath # here filepath is the variable name
