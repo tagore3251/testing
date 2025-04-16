@@ -14,5 +14,6 @@ echo "Files to be deleted: $FILES_TO_DELETE"
 while read -r filepath # here filepath is the variable name
 do
     echo "Deleting file: $filepath"
+    rm -rf $filepath
     
 done <<< $FILES_TO_DELETE  # <<< = it provides a string or variable as input
