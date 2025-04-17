@@ -31,9 +31,9 @@
         msg: "Iam Learning {{ COURSE }} Course and Duration is {{ DURATION }} hours"
 
     # 3.1-Using Variables from an External File(Defined at Play Level)
-    - name: print name information
+    - name: Print name information
       ansible.builtin.debug:
-      msg: "My Name is {{ NAME }}"
+        msg: "My Name is {{ NAME }}"
 
     # 3.2-Using Variables from an External File (Within Tasks)
     - name: Load variables from a file
