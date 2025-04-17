@@ -49,18 +49,7 @@
         msg: "My District is {{ DISTRICT }}"
 
     # 4.2-Using a Variable Prompt (Within Tasks)
-    - name: Ask for Age
-      pause:
-        prompt: "Please Enter Your Age..."
-      register: AGE
-
-    - name: Ensure AGE is Exit
-      ansible.builtin.debug:
-        var: AGE
-
-    - name: Print Prompt (Within Tasks) Variables
-      ansible.builtin.debug:
-        msg: "I am {{ AGE.user_input }} years old."
+    
 
     # 5-Defining Variables in the Inventory File
     - name: Print Inventory File variables
@@ -72,6 +61,8 @@
       ansible.builtin.debug:
         msg: "Runtime environment is {{ env }}"
     
+    
+#Precedence Order from Highest to Lowest
 
 #1. Command line or args
 #2. Task level
