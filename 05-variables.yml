@@ -48,19 +48,19 @@
       ansible.builtin.debug:
         msg: "My District is {{ DISTRICT }}"
 
-    # 4.2-Using a Variable Prompt (Within Tasks)
-    - name: Ask for Age
-      pause:
-        prompt: "Please Enter Your Age..."
-      register: AGE
+    # # 4.2-Using a Variable Prompt (Within Tasks)
+    # - name: Ask for Age
+    #   pause:
+    #     prompt: "Please Enter Your Age..."
+    #   register: AGE
 
-    - name: Ensure AGE is Captured
-      ansible.builtin.debug:
-        msg: "Captured AGE: {{ AGE }}"
+    # - name: Ensure AGE is Captured
+    #   ansible.builtin.debug:
+    #     msg: "Captured AGE: {{ AGE }}"
 
-    - name: Print Prompt (Within Tasks) Variables
-      ansible.builtin.debug:
-        msg: "I am {{ AGE.user_input }} years old."
+    # - name: Print Prompt (Within Tasks) Variables
+    #   ansible.builtin.debug:
+    #     msg: "I am {{ AGE.user_input }} years old."
 
     # 5-Defining Variables in the Inventory File
     - name: Print Inventory File variables
