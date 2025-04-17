@@ -31,7 +31,7 @@
         msg: "Iam Learning {{ COURSE }} Course and Duration is {{ DURATION }} hours"
 
     # 3.1-Using Variables from an External File(Defined at Play Level)
-    - name: Print External File(Defined at Play Level) Variable
+    - name: Print External File(Defined at Play Level) Variables
       ansible.builtin.debug:
         msg: "My Name is {{ NAME }}"
 
@@ -39,12 +39,12 @@
     - name: Load variables from a file
       include_vars: vars.yml
    
-    - name: Print External File (Within Tasks) Variable
+    - name: Print External File (Within Tasks) Variables
       ansible.builtin.debug:
         msg: "My Village is {{ VILLAGE }}"
 
     # 4.1-Using a Variable Prompt (Defined at Play Level)
-    - name: Print Prompt (Defined at Play Level) Variable
+    - name: Print Prompt (Defined at Play Level) Variables
       ansible.builtin.debug:
         msg: "My District is {{ DISTRICT }}"
 
@@ -54,7 +54,11 @@
         prompt: "Please Enter Your Age..."
       register: AGE
 
-    - name: Print Prompt (Within Tasks)
+    - name: Ensure AGE is Captured
+      ansible.builtin.debug:
+        msg: "Captured AGE: {{ AGE }}"
+
+    - name: Print Prompt (Within Tasks) Variables
       ansible.builtin.debug:
         msg: "I am {{ AGE.user_input }} years old."
 
