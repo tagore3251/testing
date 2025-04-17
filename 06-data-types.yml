@@ -12,7 +12,7 @@
     my_boolean: true
 
     # 4️-List Data Type (Array)
-    devops_tools:
+    tools:
       - AWS
       - "Shell Scripting"  
       - Ansible
@@ -47,7 +47,7 @@
 
     - name: Display List
       ansible.builtin.debug:
-        msg: "My Skills on DevOps {{ skills }}"
+        msg: "DevOps Tools are {{ tools }}"
 
     - name: Display Dictionary
       ansible.builtin.debug:
