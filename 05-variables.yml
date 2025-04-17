@@ -1,7 +1,6 @@
 # Ansible Playbook Demonstrating Variables Usage
 - name: Ansible Variables
   hosts: web
-  connection: local
   
   vars_files:
   - vars.yml
@@ -61,7 +60,7 @@
       ansible.builtin.debug:
         msg: "Runtime environment is {{ env }}"
     
-    
+
 #Precedence Order from Highest to Lowest
 
 #1. Command line or args
