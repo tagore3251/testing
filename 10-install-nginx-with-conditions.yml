@@ -1,0 +1,19 @@
+- name: Install Nginx
+  hosts: web
+  become: yes
+
+  vars:
+    package_name: "nginx"
+
+  tasks:
+  - name: Install Nginx on RHEL
+    ansible.builtin.dnf:
+      name: "{{ package_name }}"
+      state: installed
+    when: ansible_os_family == "RedHat"  # you can access system facts using ansible_<facts>
+  
+  - name: Install Nginx on Ubuntu
+    ansible.builtin.apt:
+      name: "{{ package_name }}"
+      state: installed
+    when: ansible_os_family == "Debian"

@@ -3,56 +3,56 @@
 
   vars:
     # 1️-String Data Type
-    my_name: "Tagore!"
+    course: "DevOps with AWS"
 
     # 2️-Integer Data Type
-    id: 51
+    id: 3251
 
     # 3️-Boolean Data Type (True or False)
-    my_boolean: true
+    live: true
 
     # 4️-List Data Type (Array)
-    tools:
+    topics:
       - AWS
+      - Linux
       - "Shell Scripting"  
       - Ansible
       - Terraform
       - Docker
       - Kubernetes
       - Git
-      - Prometheus
-      - Grafana
+      - Monitoring
 
     # 5️-Dictionary Data Type (Key-Value Pairs)
     details:
-      name: "Tagore"
-      age: 20
-      city: "Anantapur"
+      course: "DevOps with AWS"
+      duration: 120
+      location: "Online"
 
     # 6️-Null (None) Data Type
-    my_null: null
+    fees: null
 
   tasks:
     - name: Display String
       ansible.builtin.debug:
-        msg: "Hello Iam  {{ my_name }}"
+        msg: "Hello We are Teaching {{ course }}"
 
     - name: Display Integer
       ansible.builtin.debug:
-        msg: "My Roll Number is {{ id }}"
+        msg: "Course ID is - {{ id }}"
 
     - name: Display Boolean
       ansible.builtin.debug:
-        msg: " {{ my_boolean }}"
+        msg: " is it live? - {{ live }}"
 
     - name: Display List
       ansible.builtin.debug:
-        msg: "DevOps Tools are {{ tools }}"
+        msg: "DevOps Topics We Will Cover {{ topics }}"
 
     - name: Display Dictionary
       ansible.builtin.debug:
-        msg: "My Details are: Name={{ details.name }}, Age={{ details.age }}, City={{ details.city }}"
+        msg: "Course Details are: Course={{ details.course }}, Duration={{ details.duration }}, Location={{ details.location }}"
 
     - name: Display Null Value
       ansible.builtin.debug:
-        msg: "Null Value: {{ my_null }}"
+        msg: "Entry Fees: {{ fees }}"
