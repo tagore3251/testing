@@ -1,0 +1,58 @@
+- name: Ansible Data Types
+  hosts: web
+
+  vars:
+    # 1️-String Data Type
+    name: "Tagore!"
+
+    # 2️-Integer Data Type
+    id: 51
+
+    # 3️-Boolean Data Type (True or False)
+    my_boolean: true
+
+    # 4️-List Data Type (Array)
+    skills:
+      - AWS
+      - "Shell Scripting"  
+      - Ansible
+      - Terraform
+      - Docker
+      - Kubernetes
+      - Git
+      - Prometheus
+      - Grafana
+
+    # 5️-Dictionary Data Type (Key-Value Pairs)
+    details:
+      name: "Tagore"
+      age: 20
+      city: "Anantapur"
+
+    # 6️-Null (None) Data Type
+    my_null: null
+
+  tasks:
+    - name: Display String
+      ansible.builtin.debug:
+        msg: "Hello Iam  {{ name }}"
+
+    - name: Display Integer
+      ansible.builtin.debug:
+        msg: "My Roll Number is {{ id }}"
+
+    - name: Display Boolean
+      ansible.builtin.debug:
+        msg: " {{ my_boolean }}"
+
+    - name: Display List
+      ansible.builtin.debug:
+        msg: "My Skills on DevOps {{ skills }}"
+
+    - name: Display Dictionary
+      ansible.builtin.debug:
+        msg: "My Details are: Name={{ my_dict.name }}, Age={{ my_dict.age }}, City={{ my_dict.city }}"
+
+    - name: Display Null Value
+      ansible.builtin.debug:
+        msg: "Null Value: {{ my_null }}"
