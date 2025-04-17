@@ -46,7 +46,7 @@
     # 4.1-Using a Variable Prompt (Defined at Play Level)
     - name: print name information
       ansible.builtin.debug:
-      msg: "My District is {{ DISTRICT }}"
+        msg: "My District is {{ DISTRICT }}"
 
     # 4.2-Using a Variable Prompt (Within Tasks)
     - name: Ask for Age
