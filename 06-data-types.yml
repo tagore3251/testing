@@ -51,7 +51,7 @@
 
     - name: Display Dictionary
       ansible.builtin.debug:
-        msg: "My Details are: Name={{ my_dict.name }}, Age={{ my_dict.age }}, City={{ my_dict.city }}"
+        msg: "My Details are: Name={{ details.name }}, Age={{ details.age }}, City={{ details.city }}"
 
     - name: Display Null Value
       ansible.builtin.debug:
