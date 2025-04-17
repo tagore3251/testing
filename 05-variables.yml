@@ -1,6 +1,7 @@
 # Ansible Playbook Demonstrating Variables Usage
 - name: Ansible Variables
   hosts: web
+  connection: local
   
   vars_files:
   - vars.yml
