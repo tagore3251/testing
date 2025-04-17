@@ -3,7 +3,7 @@
 
   vars:
     # 1️-String Data Type
-    name: "Tagore!"
+    my_name: "Tagore!"
 
     # 2️-Integer Data Type
     id: 51
@@ -12,7 +12,7 @@
     my_boolean: true
 
     # 4️-List Data Type (Array)
-    skills:
+    devops_tools:
       - AWS
       - "Shell Scripting"  
       - Ansible
