@@ -35,7 +35,7 @@
   tasks:
     - name: Display String
       ansible.builtin.debug:
-        msg: "Hello Iam  {{ name }}"
+        msg: "Hello Iam  {{ my_name }}"
 
     - name: Display Integer
       ansible.builtin.debug:
