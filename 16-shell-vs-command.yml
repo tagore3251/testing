@@ -1,7 +1,7 @@
 - name: Demonstrate ansible.builtin.shell and ansible.builtin.command
   hosts: local
   connection: local
-
+  become: yes
   tasks:
     # 1️-Using 'command' to run a simple command
     - name: Get system uptime using 'command'
