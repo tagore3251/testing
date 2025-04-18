@@ -24,7 +24,7 @@
     # 3️-Using 'command' for a safer execution (avoiding shell parsing)
     - name: List files in /tmp using 'command'
       ansible.builtin.command: ls -l /tmp  # Lists files without shell expansion
-      register: tmp_files  # Stores output
+      register: tmp_files 
 
     - name: Show files in /tmp
       ansible.builtin.debug:
@@ -32,8 +32,8 @@
 
     # 4️-Using 'shell' when necessary (for pipes, redirections, etc.)
     - name: Find all .log files in /var/log using 'shell'
-      ansible.builtin.shell: "find /var/log -name \"*.log\" 2>/dev/null"  # Uses shell expansion with wildcard
-      register: log_files  # Stores output
+      ansible.builtin.shell: "find /var/log -name '*.log' 2>/dev/null"  # Uses shell expansion with wildcard
+      register: log_files  
 
     - name: Show all log files found
       ansible.builtin.debug:
