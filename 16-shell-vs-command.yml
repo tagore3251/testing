@@ -32,13 +32,9 @@
 
     # 4️-Using 'shell' when necessary (for pipes, redirections, etc.)
     - name: Find all .log files in /var/log using 'shell'
-      ansible.builtin.shell: "find /var/log -name '*.log' 2>/dev/null'"  # Uses shell expansion with wildcard
+      ansible.builtin.shell: "find /var/log -name \"*.log\" 2>/dev/null"  # Uses shell expansion with wildcard
       register: log_files  # Stores output
 
     - name: Show all log files found
       ansible.builtin.debug:
         msg: "Log files found:\n{{ log_files }}"  # Prints all found log files
-
-- name: Find log files while ignoring errors
-  ansible.builtin.shell: "find /var/log -name '*.log' 2>/dev/null"
-  register: log_files
