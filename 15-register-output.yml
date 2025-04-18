@@ -14,7 +14,7 @@
 
     # 2-Register the output of a package check
     - name: Check if Nginx is installed
-      ansible.builtin.command: "dpkg -l | grep nginx"
+      ansible.builtin.command: "rpm -qa | grep nginx"
       register: nginx_status
       ignore_errors: yes  # Avoid failure if Nginx is not installed
 
