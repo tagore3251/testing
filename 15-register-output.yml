@@ -17,9 +17,9 @@
       ansible.builtin.command: "dpkg -l | grep nginx"
       register: nginx_status
       ignore_errors: yes  # Avoid failure if Nginx is not installed
-      
+
     - name: Install Nginx if not found
-      ansible.builtin.apt:
+      ansible.builtin.dnf:
         name: nginx
         state: present
       when: nginx_status.rc != 0  # Runs only if Nginx is not installed
