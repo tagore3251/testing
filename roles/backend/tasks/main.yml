@@ -1,4 +1,4 @@
- tasks:
+  tasks:
   - name: Disabling Current nodejs
     ansible.builtin.command: dnf module disable nodejs -y
 
