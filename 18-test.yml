@@ -5,7 +5,7 @@
     subnet_id: subnet-0cd7e2fa9b733df83
     sg_id: sg-00ad580d815e8036e
     ami_id: ami-09c813fb71547fc4f
-    instance_type: t3.micro
+    instance_type: t2.micro
     instances:
     - instace1
     - instace2
@@ -35,5 +35,5 @@
 
   - name: Print Private IP addresses
     ansible.builtin.debug:
-      msg: "{{ item.results.instances[0].private_ip_address }}"
+      msg: "{{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_info.results }}"
