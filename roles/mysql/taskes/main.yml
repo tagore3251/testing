@@ -1,9 +1,4 @@
-- name: Configure MySQL Server
-  hosts: mysql
-  become: yes
-  vars:
-    mysql_root_password: ExpenseApp@1
-  tasks:
+tasks:
   - name: Install MySQL libraries
     ansible.builtin.pip:
       name: "{{ item }}"
@@ -27,7 +22,7 @@
     community.mysql.mysql_info: #retrieve MySQL server information, such as databases, users, configuration settings, and status
       login_user: root
       login_password: "{{ mysql_root_password }}"
-      login_host: 172.31.22.240
+      login_host: "{{ MySQL_HOST }}"
     register: mysql_info
     ignore_errors: true
 
