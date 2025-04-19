@@ -1,0 +1,40 @@
+- name: Install nginx Server
+  ansible.builtin.dnf:
+    name: nginx
+    state: installed
+
+- name: Enable and Start nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
+  
+# There is no option to remove content inside the file , that's why we will remove entire directory
+- name: Delete html directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: Create html directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+- name: Download Frontend Code
+  ansible.builtin.get_url:
+    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+    dest: /tmp/frontend.zip
+
+- name: Unzip Frontend Code
+  ansible.builtin.unarchive:
+    src: /tmp/frontend.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+- name: Copy Expense Config
+  ansible.builtin.template:
+    src: expense.conf.j2
+    dest: /etc/nginx/default.d/expense.conf
+  notify:
+  - Restart Nginx #Handlers - notifiers when some change event is happened in one task ,ansible can triggers other tasks through handlers
+  
