@@ -8,6 +8,7 @@
     sg_id: sg-00ad580d815e8036e
     ami_id: ami-09c813fb71547fc4f
     instance_type: t2.micro
+    region: "us-east-1"
     instances:
     - instance-1
     - instance-2
@@ -28,6 +29,7 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
       instance_type: "{{ instance_type }}"
+      region: "{{ region }}"
     loop: "{{ instances }}"
     register: ec2_info
 
