@@ -7,9 +7,9 @@
     ami_id: ami-09c813fb71547fc4f
     instance_type: t2.micro
     instances:
-    - instace1
-    - instace2
-    - instace3
+    - mysql
+    - backend
+    - frontend
   tasks:
   - name: Install AWS Python libraries
     ansible.builtin.pip:
